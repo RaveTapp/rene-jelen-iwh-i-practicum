@@ -1,0 +1,58 @@
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Update
+        a(href="/") Return to the homepage
+
+        form(action="/update-cobj" method="POST" class="form-wrapper")
+            
+            .form-group
+                label(for="firstname") First Name
+                input(type="text" id="firstname" name="firstname" required)
+
+            .form-group
+                label(for="lastname") Last Name
+                input(type="text" id="lastname" name="lastname" required)
+
+            .form-group
+                label(for="email") Email Address
+                input(type="email" id="email" name="email" required)
+
+            .form-group
+                label(for="favorite_movie") Favorite Movie
+                input(type="text" id="favorite_movie" name="favorite_movie")
+
+            .form-group
+                label Preferred Communication (Select all that apply)
+                .checkbox-group
+                    label
+                        input(type="checkbox" name="preferred_communication" value="SMS") 
+                        |  SMS
+                    label
+                        input(type="checkbox" name="preferred_communication" value="Phone Call") 
+                        |  Phone Call
+                    label
+                        input(type="checkbox" name="preferred_communication" value="Zoom") 
+                        |  Zoom
+                    label
+                        input(type="checkbox" name="preferred_communication" value="Outlook") 
+                        |  Outlook
+                    label
+                        input(type="checkbox" name="preferred_communication" value="E-mail") 
+                        |  E-mail
+                    label
+                        input(type="checkbox" name="preferred_communication" value="Microsoft Teams") 
+                        |  Microsoft Teams
+                    label
+                        input(type="checkbox" name="preferred_communication" value="Instagram") 
+                        |  Instagram
+
+            .form-group
+                label(for="bio") Bio
+                textarea(id="bio" name="bio" rows="4")
+
+            button(type="submit") Create Contact
